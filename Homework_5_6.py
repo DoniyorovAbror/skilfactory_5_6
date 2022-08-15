@@ -23,19 +23,19 @@ cont = 1
 player = 'X'
 while True:
     if cont > 9:
-        print("Все клетки заполнено игра закончилась ничю")
+        print("Все клетки заполнены игра закончилась в ничью")
         break
     if cont % 2 == 0:
         player = "O"
     else:
         player = "X"
-    hint = input(f'{player} Ваш ход выберайте число: ')
+    hint = input(f'{player} Ваш ход выберите число: ')
     if not hint.isdigit():
         print("Введите только число")
     elif int(hint) < 1 or int(hint) > 9:
-        print("Такой клетку нету")
+        print("Такой клетки нет")
     elif numbers.get(int(hint)) == "X" or numbers.get(int(hint)) == "O":
-        print("Клетка зайнета")
+        print("Клетка занята")
     else:
         numbers[int(hint)] = player
         if cont >= 5:
